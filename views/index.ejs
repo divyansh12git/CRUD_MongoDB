@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div id="outer">
+        <form action="/submit" method="post" class="input">
+            <div class="inp1">
+                <label for="name">User Name: </label>
+                <input type="text" id="UserName" name="name" placeholder="Enter your name">
+                <label for="rollno">Roll No. : </label>
+                <input type="text" id="RollNo" name="rollno" placeholder="Enter your Roll Number">
+            </div>
+                <div class="inp2">
+                <label for="name">Email Address: </label>
+                <input type="text" id="Email" name="email" placeholder="Enter your Email Address">
+                <input type="submit" id="addUser" value="Add User">
+            </div>
+
+        </form>
+
+        <div class="itemsContainer">
+            <ul id="list">
+                <li class="head">
+                    <span class="field" id="disname">Name</span>
+                    <span class="field" id="disrollno">Roll No.</span>
+                    <span class="field" id="email">E-mail</span>
+                    <span class="filler"></span>
+                    <span class="filler"></span>
+                </li>
+                <% for(let i=0;i<users.length;i++){ %>
+                <li class="item">
+                    <span class="field" id="disname"><% users[i][name]%></span>
+                    <span class="field" id="disrollno"><% users[i][rollno]%></span>
+                    <span class="field" id="email"><% users[i][email]%></span>
+                    <button class="update">
+
+                    </button>
+                    <button class="del"></button>
+                </li>
+                <% }%>
+                
+            </ul>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <script src="/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+body{
+    display:flex;
+    
+    background-image: url(/walpaper.jpg);
+    background-color: rgba(0, 255, 255, 0.364);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+
+#outer{
+   
+    
+    margin-top:2rem;
+}
+
+.input{
+    /* border:0.5px solid black; */
+    background-color: rgba(248, 248, 248, 0.879);
+    padding:2rem;
+    border-top-left-radius:50px ;
+    border-top-right-radius:50px ;
+
+}
+.inp1{
+    margin-bottom:1rem;
+}
+#UserName{
+    height:1.2rem;
+    width:14rem;
+    border:1px solid black;
+    border-radius: 5rem;
+    padding:0.5rem;
+    margin-right:5rem;
+    margin-left:2rem;
+    color:blue;
+    font-size: 0.8rem;
+    padding-left: 1rem;
+}
+#UserName:focus{
+    outline: 5px solid rgb(252, 117, 117);
+    border: none;
+
+}
+
+#RollNo{
+    height:1.2rem;
+    width:15rem;
+    border:1px solid black;
+    border-radius: 5rem;
+    padding:0.5rem;
+    margin-left:1rem;
+    color:blue;
+    font-size: 0.8rem;
+    padding-left: 1rem;
+}
+#RollNo:focus{
+    outline: 5px solid rgb(252, 117, 117);
+    border: none;
+
+}
+
+
+#Email{
+    height:1.2rem;
+    width:14rem;
+    border:1px solid black;
+    border-radius: 5rem;
+    padding:0.5rem;
+    margin-left:1rem;
+    margin-right:10rem;
+    color:blue;
+    font-size: 0.8rem;
+    padding-left: 1rem;
+}
+#Email:focus{
+    outline: 5px solid rgb(252, 117, 117);
+    border: none;
+
+}
+#addUser{
+    height:2.5rem;
+    width:8rem;
+    border-radius:10px;
+    color:aliceblue;
+    background-color: black;
+}
+
+.itemsContainer{
+    border:0.5px solid black;
+    height:25rem;
+    
+    background-color: rgba(127, 255, 212, 0.833);
+    border-bottom-left-radius:50px ;
+    border-bottom-right-radius:50px ;
+    padding:1rem;
+    
+}
+#list{
+    height:23rem;
+    overflow-y:scroll ;
+    
+    
+}
+#list::-webkit-scrollbar {
+    display: none;
+  }
+.head{
+    display:flex;
+    padding-left:1rem;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+    color:white;
+    height:2.5rem;
+}
+
+.item{
+    display:flex;
+    padding-left:1rem;
+    padding-right:1rem;
+    justify-content: space-around;
+    align-items: center;
+    background-color: antiquewhite;
+    height:3rem;
+    font-size: 18px;
+    
+}
+.filler{
+    width:2rem;
+}
+.field{
+    width:15rem;
+    word-break: break-all;
+    font-size: 17.5px;
+}
+
+.del{
+    height:2rem;
+    width:2rem;
+    margin-left:1rem;
+    padding:0.5rem;
+    border:none;
+    border-radius: 10px;
+    background-color: rgb(255, 116, 116);
+    background-image: url(/deleteicon.png);
+    background-position: center;
+    background-size:contain ;
+    background-size: 1.2rem;
+    background-repeat: no-repeat;
+}
+
+
+.update{
+    height:2rem;
+    width:2rem;
+    margin-left:1rem;
+    padding:0.5rem;
+    border:none;
+    border-radius: 10px;
+    background-color: rgb(81, 116, 255);
+    background-image: url(/updateicon.png);
+    background-position: center;
+    background-size:contain ;
+    background-size: 1.2rem;
+    background-repeat: no-repeat;
+}
