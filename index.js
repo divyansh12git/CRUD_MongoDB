@@ -4,9 +4,13 @@ import {dirname} from "path";
 import { fileURLToPath } from "url";
 import mongoose from "mongoose";
 
+
+
 const app=express();
 const __dirname=dirname(fileURLToPath(import.meta.url));
-mongoose.connect('mongodb://localhost:27017/userdata');
+mongoose.connect('mongodb://127.0.0.1:27017/userdata').then(()=>{
+    console.log("connection established");
+});
 
 
 let PORT=3000;
@@ -48,16 +52,17 @@ app.use(express.static("public"));
 
 app.get("/",async(req,res)=>{
 
-    await User.find({}).then((err,found)=>{
+    const searchRes=await User.find({}).then((found,err)=>{
+        // console.log(found);
         if(found.length===0)
         {
             User.insertMany(defaultuser).then(()=>{
                 console.log(" default user added ")}
-                
             );
             res.redirect("/");
         }
         else{
+            
             res.render("index.ejs",{users:found});
         }
     })
@@ -67,8 +72,24 @@ app.get("/",async(req,res)=>{
 
 app.post("/submit",(req,res)=>{
     console.log(req.body);
+    const postuser=new User({
+        name:req.body.name,
+        rollno:req.body.rollno,
+        email:req.body.email
+    })
+    
+    postuser.save();
+    
     res.redirect("/")
  
+})
+app.post("/delete",(req,res)=>{
+    let id=req.body.delete;
+    
+    User.findByIdAndRemove(id).then(()=>{
+        console.log("user removed sucessfully");}
+    );
+    res.redirect("/");
 })
 
 

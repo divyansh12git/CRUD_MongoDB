@@ -32,15 +32,18 @@
                     <span class="filler"></span>
                     <span class="filler"></span>
                 </li>
-                <% for(let i=0;i<users.length;i++){ %>
+                <% //console.log(users[0].name)
+                for(let i=0;i<users.length;i++){ %>
                 <li class="item">
-                    <span class="field" id="disname"><% users[i][name]%></span>
-                    <span class="field" id="disrollno"><% users[i][rollno]%></span>
-                    <span class="field" id="email"><% users[i][email]%></span>
+                    <span class="field" id="disname"><%= users[i].name%></span>
+                    <span class="field" id="disrollno"><%= users[i].rollno%></span>
+                    <span class="field" id="email"><%= users[i].email%></span>
                     <button class="update">
 
                     </button>
-                    <button class="del"></button>
+                    <form method="post" action="/delete">
+                        <button class="del" onclick="this.form.submit()" name="delete" value="<%= users[i]._id %>"></button>
+                    </form>
                 </li>
                 <% }%>
                 
